@@ -123,14 +123,20 @@ app.post("/curd-register", async function(req, resp) {
     let fileName = "nopic.jpg";
     let fileName1 = "nopic.jpg";
 
-
     if (req.files && req.files.profilePic) {
         let file = req.files.profilePic;
-        let locationToSave = __dirname + "/Public/uploads/" + file.name;
 
         try {
-            await file.mv(locationToSave);
-            let picUrlResult = await cloudinary.uploader.upload(locationToSave);
+            // Upload directly to Cloudinary from buffer, no local file needed
+            let picUrlResult = await new Promise((resolve, reject) => {
+                cloudinary.uploader.upload_stream(
+                    { resource_type: 'auto' },
+                    (error, result) => {
+                        if (error) reject(error);
+                        else resolve(result);
+                    }
+                ).end(file.data);
+            });
             fileName = picUrlResult.secure_url;
             console.log("Profile Pic Uploaded:", fileName);
         } catch (err) {
@@ -141,11 +147,18 @@ app.post("/curd-register", async function(req, resp) {
 
     if (req.files && req.files.idProof) {
         let file = req.files.idProof;
-        let locationToSave = __dirname + "/Public/uploads/" + file.name;
 
         try {
-            await file.mv(locationToSave);
-            let picUrlResult = await cloudinary.uploader.upload(locationToSave);
+            // Upload directly to Cloudinary from buffer, no local file needed
+            let picUrlResult = await new Promise((resolve, reject) => {
+                cloudinary.uploader.upload_stream(
+                    { resource_type: 'auto' },
+                    (error, result) => {
+                        if (error) reject(error);
+                        else resolve(result);
+                    }
+                ).end(file.data);
+            });
             fileName1 = picUrlResult.secure_url;
             console.log("ID Proof Uploaded:", fileName1);
         } catch (err) {
@@ -277,12 +290,17 @@ app.post("/do-update", async function(req, resp) {
     if (req.files != null) {
         if (req.files.profilePic) {
             let profilePic = req.files.profilePic;
-            let locationToSave = __dirname + "/Public/uploads/" + profilePic.name;
-            await profilePic.mv(locationToSave);
             try {
-                await cloudinary.uploader.upload(locationToSave).then(function(picUrlResult) {
-                    fileName = picUrlResult.secure_url;
+                let picUrlResult = await new Promise((resolve, reject) => {
+                    cloudinary.uploader.upload_stream(
+                        { resource_type: 'auto' },
+                        (error, result) => {
+                            if (error) reject(error);
+                            else resolve(result);
+                        }
+                    ).end(profilePic.data);
                 });
+                fileName = picUrlResult.secure_url;
             } catch (err) {
                 console.error("Profile Pic Upload Error:", err.message);
                 return resp.status(500).send("Profile Picture Upload Failed: " + err.message);
@@ -291,12 +309,17 @@ app.post("/do-update", async function(req, resp) {
 
         if (req.files.idProof) {
             let idProof = req.files.idProof;
-            let locationToSave = __dirname + "/Public/uploads/" + idProof.name;
-            await idProof.mv(locationToSave);
             try {
-                await cloudinary.uploader.upload(locationToSave).then(function(picUrlResult) {
-                    fileName1 = picUrlResult.secure_url;
+                let picUrlResult = await new Promise((resolve, reject) => {
+                    cloudinary.uploader.upload_stream(
+                        { resource_type: 'auto' },
+                        (error, result) => {
+                            if (error) reject(error);
+                            else resolve(result);
+                        }
+                    ).end(idProof.data);
                 });
+                fileName1 = picUrlResult.secure_url;
             } catch (err) {
                 console.error("ID Proof Upload Error:", err.message);
                 return resp.status(500).send("ID Proof Upload Failed: " + err.message);

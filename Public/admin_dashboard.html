@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Using the gradient colors from your main site */
+        
+        .gradient-bg {
+            background: linear-gradient(90deg, #7a52f4, #b085f9);
+        }
+        
+        .btn-primary {
+            background-color: #5a3dc8;
+            border-color: #5a3dc8;
+        }
+        
+        .btn-primary:hover {
+            background-color: #4a32b0;
+            border-color: #4a32b0;
+        }
+        
+        .btn-dark {
+            background-color: #4a32b0;
+            border-color: #4a32b0;
+        }
+        
+        .btn-dark:hover {
+            background-color: #3a2990;
+            border-color: #3a2990;
+        }
+        
+        .card-header {
+            background: linear-gradient(90deg, #7a52f4, #b085f9);
+            color: white;
+        }
+    </style>
+    <script>
+        function init() {
+            let activeUser = localStorage.getItem("activeUser");
+            document.getElementById("user").innerHTML = activeUser;
+        }
+    </script>
+</head>
+
+<body class="bg-light" onload="init();">
+
+    <div class="container d-flex justify-content-center mt-5">
+        <div class="card p-4 shadow-lg rounded-4" style="max-width: 800px; width: 100%;">
+            <!-- Card header with gradient like main site -->
+            <div class="card-header rounded-3 mb-4">
+                <h2 class="text-center fw-bold text-white">Admin Dashboard: <span id="user"></span></h2>
+            </div>
+
+            <!-- Image placeholders -->
+            <div class="row text-center mt-4">
+                <div class="col-md-4">
+                    <img src="Pictures/user.png" alt="" width="300px" height="200px">
+                </div>
+                <div class="col-md-4">
+                    <img src="Pictures/volunteer.jpg" alt="">
+                </div>
+                <div class="col-md-4">
+                    <img src="Pictures/client--.png" alt="">
+                </div>
+            </div>
+
+            <!-- Dashboard buttons inside a box -->
+            <div class="card p-3 mt-4 border-0 shadow-sm">
+                <div class="row g-3">
+                    <div class="col-md-4">
+                        <a href="user_controller.html" class="btn btn-primary w-100 py-2 rounded-pill">User Controller</a>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="vol_manager.html" class="btn btn-primary w-100 py-2 rounded-pill">Volunteer Manager</a>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="client_manager.html" class="btn btn-primary w-100 py-2 rounded-pill">Client Manager</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Job</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .container-box {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border: 2px solid orange;
+            border-radius: 10px;
+            background-color: lavender;
+        }
+        
+        .form-control,
+        .form-check-input {
+            border: 1px solid orange;
+        }
+        
+        .btn-custom {
+            background-color: orange;
+            border: none;
+            color: white;
+            font-weight: bold;
+            width: 100%;
+        }
+        
+        .btn-custom:hover {
+            background-color: darkorange;
+        }
+        
+        body {
+            color: red;
+        }
+    </style>
+    <script>
+        function init() {
+            let activeUser = localStorage.getItem("activeUser");
+            document.getElementById("jobid").value = activeUser;
+        }
+    </script>
+</head>
+
+<body class="bg-light" onload="init();">
+    <br>
+    <br>
+    <h1><b><center>Publish Job</center></b></h1>
+
+    <div class="container mt-5">
+        <div class="container-box shadow">
+            <h4 class="text-center text-danger mb-4"></h4>
+            <form action="/save-post" method="post" enctype="multipart/form-data">
+
+                <!-- Client ID -->
+                <div class="mb-3">
+                    <label class="form-label">Client ID</label>
+                    <input type="text" class="form-control" name="jobid" id="jobid" readonly>
+                </div>
+
+                <div class=" row mb-3 ">
+                    <!-- Job Title -->
+                    <div class="col-md-6 ">
+                        <label class="form-label ">Job Title</label>
+                        <select name="jobtitle " class="form-select " required>
+                            <option value=" ">Select Job Title</option>
+                            <option value="Sweeper ">Sweeper</option>
+                            <option value="Security Guard ">Security Guard</option>
+                            <option value="HouseKeeper ">House Keeper</option>
+                            <option value="Care Taker ">Care Taker</option>
+                            <option value="Driver ">Driver</option>
+                            <option value="Gardener ">Gardener</option>
+                        </select>
+                    </div>
+
+                    <!-- Job Type -->
+                    <div class="col-md-6 ">
+                        <label class="form-label ">Job Type</label>
+                        <div class="d-flex ">
+                            <div class="form-check me-3 ">
+                                <input class="form-check-input " type="radio " name="jobtype " value="Part Time " required>
+                                <label class="form-check-label ">Part Time</label>
+                            </div>
+                            <div class="form-check ">
+                                <input class="form-check-input " type="radio " name="jobtype " value="Full Time " required>
+                                <label class="form-check-label ">Full Time</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mb-3 ">
+                    <!-- Firm Address -->
+                    <div class="col-md-6 ">
+                        <label class="form-label ">Firm Address</label>
+                        <input type="text " class="form-control " name="address " required>
+                    </div>
+
+                    <!-- City -->
+                    <div class="col-md-6 ">
+                        <label class="form-label ">City</label>
+                        <input type="text " class="form-control " name="city " required>
+                    </div>
+                </div>
+
+                <div class="row mb-3 ">
+                    <!-- Education -->
+                    <div class="col-md-6 ">
+                        <label class="form-label ">Education</label>
+                        <select name="edu " class="form-select " required>
+                            <option value=" ">Select</option>
+                            <option value="yes ">Yes</option>
+                            <option value="no ">No</option>
+                        </select>
+                    </div>
+
+                    <!-- Person Contact -->
+                    <div class="col-md-6 ">
+                        <label class="form-label ">Person Contact</label>
+                        <input type="text " class="form-control " name="contact " required>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit " class="btn btn-custom ">Publish Job</button>
+            </form>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js "></script>
+</body>
+
+</html>
+
+</html>

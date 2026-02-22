@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Next_Hope - Empowering Communities</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Minimal custom CSS - mostly just for the gradient background */
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #5a3dc8, #b085f9);
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('Pictures/a.avif') center/cover no-repeat;
+            min-height: 400px;
+        }
+        
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+        }
+        
+        .team-img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+        }
+        
+        .hero-carousel {
+            height: 500px;
+            object-fit: cover;
+        }
+        
+        .carousel-caption {
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark gradient-bg sticky-top">
+        <div class="container">
+            <!-- Logo/Brand and Navigation Items -->
+            <a class="navbar-brand fw-bold fs-3" href="#">
+                <img src="Pictures/q.webp" class="me-2" height="30" alt="Next_Hope Logo" loading="lazy" /> www.Next_Hope.com
+            </a>
+
+            <!-- Login/Signup Buttons -->
+            <div class="d-flex">
+                <button class="btn btn-outline-light me-2" data-bs-toggle="modal" data-bs-target="#loginModal">
+                    Login
+                </button>
+                <button class="btn btn-light text-primary fw-bold" data-bs-toggle="modal" data-bs-target="#signupModal">
+                    Sign Up
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Carousel -->
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <!-- Indicators -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleControls" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#carouselExampleControls" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#carouselExampleControls" data-bs-slide-to="2"></button>
+        </div>
+
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="d-block w-100 hero-carousel" src="Pictures/1.avif" alt="Community support">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100 hero-carousel" src="Pictures/s2.jpg" alt="Volunteer work">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100 hero-carousel" src="Pictures/will.jpg" alt="Job training">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+    </div>
+    <!-- Features Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 fw-bold">Our Services</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body text-center p-4">
+                            <div class="bg-primary bg-opacity-10 text-primary rounded-circle p-3 mb-3 mx-auto" style="width: 60px; height: 60px;">
+                                <i class="fas fa-hand-holding-heart fs-4"></i>
+                            </div>
+                            <h4 class="card-title">End Begging</h4>
+                            <p class="card-text" style=" text-align: justify; font-size: 16px;">Creating sustainable solutions to help individuals transition from street life to self-sufficiency. A beggar-free society is a vision for a community where every individual has access to the necessary resources and opportunities
+                                to live with dignity, free from the need to rely on begging.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class=" col-md-6 col-lg-3 ">
+                    <div class="card h-100 shadow-sm border-0 ">
+                        <div class="card-body text-center p-4 ">
+                            <div class="bg-primary bg-opacity-10 text-primary rounded-circle p-3 mb-3 mx-auto " style="width: 60px; height: 60px; ">
+                                <i class="fas fa-briefcase fs-4 "></i>
+                            </div>
+                            <h4 class="card-title ">Job Opportunities</h4>
+                            <p class="card-text " style=" text-align: justify;  font-size: 16px; ">Connecting individuals with meaningful employment opportunities.A beggar-free society includes not just the elimination of begging but ensuring that all people, including those who are homeless or in poverty, have the tools,
+                                resources, and opportunities to reintegrate into the workforce with dignity.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class=" col-md-6 col-lg-3 ">
+                    <div class="card h-100 shadow-sm border-0 ">
+                        <div class="card-body text-center p-4 ">
+                            <div class="bg-primary bg-opacity-10 text-primary rounded-circle p-3 mb-3 mx-auto " style="width: 60px; height: 60px; ">
+                                <i class="fas fa-hands-helping fs-4 "></i>
+                            </div>
+                            <h4 class="card-title ">Volunteer</h4>
+                            <p class="card-text " style=" text-align: justify; font-size: 16px; ">Join our community of dedicated volunteers making a direct impact.Anyone can join and volunteer to help make a difference in creating a beggar-free society and supporting those who are homeless or in poverty. Volunteering is
+                                a powerful way to contribute to the cause, provide assistance, and spread awareness.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 ">
+                    <div class="card h-100 shadow-sm border-0 ">
+                        <div class="card-body text-center p-4 ">
+                            <div class="bg-primary bg-opacity-10 text-primary rounded-circle p-3 mb-3 mx-auto " style="width: 60px; height: 60px; ">
+                                <i class="fas fa-heart fs-4 "></i>
+                            </div>
+                            <h4 class="card-title ">Community Support</h4>
+                            <p class="card-text " style=" text-align: justify;  font-size: 16px; ">Providing essential resources to help individuals thrive.A 24/7 help system for individuals experiencing homelessness or those who are in need of immediate assistance is essential to ensure that no one is left without support,
+                                regardless of the time of day or night. Having round-the-clock services can address emergency needs, provide constant care, and ensure that individuals have the help they need in crisis situations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="py-5 bg-light ">
+        <div class="container ">
+            <h2 class="text-center mb-5 fw-bold ">How It Works</h2>
+            <div class="row g-4 ">
+                <div class="col-md-4 ">
+                    <div class="card border-0 bg-transparent ">
+                        <div class="card-body text-center ">
+                            <div class="bg-primary text-white rounded-circle p-3 mb-3 mx-auto " style="width: 60px; height: 60px; ">
+                                <span class="fs-4 fw-bold ">1</span>
+                            </div>
+                            <h4>Step 1: Sign Up</h4>
+                            <p style=" text-align: justify; font-size: 16px;">Register on our platform as a volunteer, client, or admin to get started. Signing up gives you access to a wide range of opportunities to help those in need.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 ">
+                    <div class="card border-0 bg-transparent ">
+                        <div class="card-body text-center ">
+                            <div class="bg-primary text-white rounded-circle p-3 mb-3 mx-auto " style="width: 60px; height: 60px; ">
+                                <span class="fs-4 fw-bold ">2</span>
+                            </div>
+                            <h4>
+                                Step 2: Choose Your Role</h4>
+                            <p style=" text-align: justify; font-size: 16px;">Select your role: volunteer, client, or admin. Volunteers help those in need, clients receive support, and admins oversee the entire operation.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 ">
+                    <div class="card border-0 bg-transparent ">
+                        <div class="card-body text-center ">
+                            <div class="bg-primary text-white rounded-circle p-3 mb-3 mx-auto " style="width: 60px; height: 60px; ">
+                                <span class="fs-4 fw-bold ">3</span>
+                            </div>
+                            <h4>Step 3: Connect and Contribute</h4>
+                            <p style=" text-align: justify; font-size: 16px; ">Start connecting with people in need or offer your services as a volunteer. Contribute your time, effort, and skills to make a real difference in someone' s life.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-5 gradient-bg text-white ">
+        <div class="container ">
+            <h2 class="text-center mb-5 fw-bold ">Success Stories</h2>
+            <div class="row g-4 ">
+                <div class="col-md-4 ">
+                    <div class="card testimonial-card border-0 h-100 ">
+                        <div class="card-body p-4 ">
+                            <i class="fas fa-quote-left fs-1 opacity-25 mb-3 "></i>
+                            <p class="mb-4 ">"Next_Hope helped a beggar find stable employment after years of struggling. "</p>
+                            <div class="d-flex align-items-center ">
+                                <img src="Pictures/a.avif " class="rounded-circle me-3 " width="50 " alt="Testimonial ">
+                                <div>
+                                    <h6 class="mb-0 ">Sarah </h6>
+                                    <small>Former Volunteer</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 ">
+                    <div class="card testimonial-card border-0 h-100 ">
+                        <div class="card-body p-4 ">
+                            <i class="fas fa-quote-left fs-1 opacity-25 mb-3 "></i>
+                            <p class="mb-4 ">"Volunteering with Next_Hope has been one of the most rewarding experiences. "</p>
+                            <div class="d-flex align-items-center ">
+                                <img src="Pictures/g.avif " class="rounded-circle me-3 " width="50 " alt="Testimonial ">
+                                <div>
+                                    <h6 class="mb-0 "> Chen</h6>
+                                    <small>Volunteer</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 ">
+                    <div class="card testimonial-card border-0 h-100 ">
+                        <div class="card-body p-4 ">
+                            <i class="fas fa-quote-left fs-1 opacity-25 mb-3 "></i>
+                            <p class="mb-4 ">"We 've found some of our most dedicated workers through Next_Hope."</p>
+                            <div class="d-flex align-items-center">
+                                <img src="Pictures/h.avif" class="rounded-circle me-3" width="50" alt="Testimonial">
+                                <div>
+                                    <h6 class="mb-0">Riya Kohli</h6>
+                                    <small>Client</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 fw-bold">Our Team</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body text-center p-4">
+                            <img src="Pictures/me.jpg" class="team-img rounded-circle border border-3 border-primary mb-3" alt="Developer">
+                            <h4>~Harman</h4>
+                            <p class="text-muted">Lead Developer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body text-center p-4">
+                            <img src="Pictures/sir.jpg" class="team-img rounded-circle border border-3 border-primary mb-3" alt="Mentor">
+                            <h4>~Rajesh Bansal</h4>
+                            <p class="text-muted">Project Advisor</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <!-- Contact Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5 fw-bold">Contact Us</h2>
+            <div class="row g-4">
+                <!-- Contact Info Card -->
+                <div class="col-lg-6">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body p-4">
+                            <h4 class="mb-4">Get In Touch</h4>
+                            <div class="mb-4">
+                                <h5><i class="fas fa-map-marker-alt text-primary me-2"></i> Our Location</h5>
+                                <p>Akal University,Talwandi,Bathinda.
+                                    <punjab</p>
+                            </div>
+                            <div class="mb-4">
+                                <h5><i class="fas fa-envelope text-primary me-2"></i> Email Us</h5>
+                                <p>contact@nexthope.org</p>
+                            </div>
+                            <div class="mb-4">
+                                <h5><i class="fas fa-phone text-primary me-2"></i> Call Us</h5>
+                                <p>+91-4562967890</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Google Maps -->
+                <div class="col-lg-6">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body p-0">
+                            <!-- Removed padding to make map edge-to-edge -->
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3423.542125349903!2d75.0889556!3d29.9717278!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391733848eb0f6b3%3A0x539fd8e8f72636a3!2sAkal%20University!5e0!3m2!1sen!2sin!4v1712405442750!5m2!1sen!2sin"
+                                width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="gradient-bg text-white py-5">
+        <div class="container">
+            <div class="row g-4">
+                <!-- About Section -->
+                <div class="col-lg-3">
+                    <h4 class="mb-4">Next_Hope</h4>
+                    <p class="mb-4">Empowering individuals and communities through opportunity and support.</p>
+                    <div>
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <!-- Motive Section -->
+                <div class="col-lg-2 col-md-3">
+                    <h4 class="mb-4">Motive</h4>
+                    <p class="mb-4">Filling blessed by enlightening someone's lives.</p>
+                </div>
+
+                <!-- Newsletter Section -->
+                <div class="col-lg-4 col-md-3">
+                    <h5 class="mb-4">Newsletter</h5>
+                    <p>Subscribe for updates on our programs and success stories.</p>
+                    <form class="mt-3">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Your Email">
+                            <button class="btn btn-light" type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Copyright and Links -->
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2025 Next_Hope. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="#" class="text-white me-3">Privacy Policy</a>
+                    <a href="#" class="text-white me-3">Terms</a>
+                    <a href="#" class="text-white">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header gradient-bg text-white">
+                    <h5 class="modal-title">Login</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="/login-details" method="GET" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label for="txtEmailLogin" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="txtEmailLogin" name="x">
+                        </div>
+                        <div class="mb-3">
+                            <label for="txtPassLogin" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="txtPassLogin" name="y">
+                        </div>
+                        <button type="button" class="btn btn-primary w-100" id="loginbtn">Login</button>
+                        <p id="res2" class="mt-2 text-center"></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div class="modal fade" id="signupModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header gradient-bg text-white">
+                    <h5 class="modal-title">Signup</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="/save-details" method="GET" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label for="txtEmailSignup" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="txtEmailSignup" name="x" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="txtPassSignup" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="txtPassSignup" name="y" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="txtUserType" class="form-label">User Type</label>
+                            <select class="form-select" id="txtUserType" name="z" required>
+                                <option value="client">Client</option>
+                                <option value="volunteer">Volunteer</option>
+                                <option value="Admin">Admin</option>
+                            </select>
+                        </div>
+                        <button type="button" class="btn btn-primary w-100" id="signupbtn">Signup</button>
+                        <p id="res" class="mt-2 text-center"></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <script>
+        // Extra validation functions
+        function isValidEmail(email) {
+            // Simple regex for email validation
+            var regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+            return regex.test(email);
+        }
+
+        function isValidPassword(password) {
+            // Example: Password must be at least 6 characters long
+            return password.length >= 6;
+        }
+
+
+        $(document).ready(function() {
+            $("#signupbtn").click(function(event) {
+                event.preventDefault();
+                let email = $("#txtEmailSignup").val().trim();
+                let password = $("#txtPassSignup").val().trim();
+                let userType = $("#txtUserType").val();
+
+                if (!email || !password || !userType) {
+                    $("#res").html("❌ All fields are required!").css("color", "red");
+                    return;
+                }
+
+
+                if (!isValidEmail(email)) {
+                    $("#res").html("❌ Please enter a valid email address.").css("color", "red");
+                    return;
+                }
+                if (!isValidPassword(password)) {
+                    $("#res").html("❌ Password must be at least 6 characters long.").css("color", "red");
+                    return;
+                }
+                if (!email || !password || !userType) {
+                    $("#res").html("❌ All fields are required!").css("color", "red");
+                    return;
+                }
+
+
+
+
+                let obj = {
+                    type: "GET",
+                    url: "/save-details",
+                    data: {
+                        x: email,
+                        y: password,
+                        z: userType
+                    }
+                };
+
+                $.ajax(obj).done(function(response) {
+                        $("#res").html("🎉 Signup Successful!").css("color", "green");
+                    })
+                    .fail(function(xhr) {
+                        $("#res").html("❌ " + xhr.responseText).css("color", "red");
+                    });
+            });
+
+            $("#loginbtn").click(function() {
+                let email = $("#txtEmailLogin").val().trim();
+                let password = $("#txtPassLogin").val().trim();
+
+                if (!isValidEmail(email)) {
+                    $("#res2").html("❌ Please enter a valid email address.").css("color", "red");
+                    return;
+                }
+                if (!isValidPassword(password)) {
+                    $("#res2").html("❌ Password must be at least 6 characters long.").css("color", "red");
+                    return;
+                }
+                if (!email || !password) {
+                    $("#res2").html("❌ Email & Password required!").css("color", "red");
+                    return;
+                }
+
+                let obj = {
+                    type: "GET",
+                    url: "/login-details",
+                    data: {
+                        x: email,
+                        y: password
+                    }
+                };
+
+                $.ajax(obj)
+                    .done(function(response) {
+                        console.log(response);
+                        if (response === "Blocked") {
+                            $("#res2").html("Your account has been blocked. Contact support.").css("color", "red");
+                        } else if (response === "Invalid User Id or Password") {
+                            $("#res2").html("Invalid email or password.").css("color", "red");
+                        } else {
+                            $("#res2").html("✅ Login Successful! (User Type: " + response.userType + ")").css("color", "green");
+                        }
+
+                        var ut = (response.userType || "").toLowerCase();
+                        if (ut === "client") {
+                            localStorage.setItem("activeUser", $("#txtEmailLogin").val());
+                            window.location.href = "/Client_dash.html";
+                        } else if (ut === "volunteer") {
+                            localStorage.setItem("activeUser", $("#txtEmailLogin").val());
+                            window.location.href = "/vol_dash.html";
+                        } else if (ut === "admin") {
+                            localStorage.setItem("activeUser", $("#txtEmailLogin").val());
+                            window.location.href = "/admin_dashboard.html";
+                        }
+
+
+                    }).fail(function(xhr) {
+                        $("#res2").html("❌ Login Failed: " + xhr.responseText).css("color", "red");
+                    });
+            });
+        });
+    </script>
+</body>
+
+</html>
